@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19806bc7-000d-4244-9f6b-e3201b02a47f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/flutter_local_notifications/android/src/main/java/com/dexterous/flutterlocalnotifications/FlutterLocalNotificationsPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_local_notifications/android/src/main/java/com/dexterous/flutterlocalnotifications/FlutterLocalNotificationsPlugin.java" afterDir="false" />
-    </list>
+    <list default="true" id="19806bc7-000d-4244-9f6b-e3201b02a47f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

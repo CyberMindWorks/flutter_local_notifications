@@ -268,7 +268,7 @@ public class FlutterLocalNotificationsPlugin
     setSound(context, notificationDetails, builder);
     setVibrationPattern(notificationDetails, builder);
     setLights(notificationDetails, builder);
-    setStyle(context, notificationDetails, builder);
+    // setStyle(context, notificationDetails, builder);
     setProgress(notificationDetails, builder);
     setCategory(notificationDetails, builder);
     setTimeoutAfter(notificationDetails, builder);
