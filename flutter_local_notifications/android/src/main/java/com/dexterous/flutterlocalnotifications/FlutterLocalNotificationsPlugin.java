@@ -192,14 +192,14 @@ public class FlutterLocalNotificationsPlugin
 
     RemoteViews custom_notification_type_1 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_1);
     // custom_notification_type_1.setImageViewResource(R.id.image, R.drawable.sample);
-    custom_notification_type_1.setImageViewResource(R.id.logo, R.drawable.logo);
+    // custom_notification_type_1.setImageViewResource(R.id.logo, R.drawable.logo);
     custom_notification_type_1.setTextViewText(R.id.title, "இன்றைய சந்தை (பயிர்/காய்கறி) விலை உங்களுக்காக 🔥🔥🔥🔥 இன்றைய சந்தை (பயிர்/காய்கறி) விலை உங்களுக்காக 🔥🔥🔥🔥 இன்றைய சந்தை (பயிர்/காய்கறி) விலை உங்களுக்காக 🔥🔥🔥🔥");
     // custom_notification_type_1.setTextViewText(R.id.button, "Apply loan");
     custom_notification_type_1.setTextViewText(R.id.logoTitle, "Farmyngclub");
     custom_notification_type_1.setTextViewText(R.id.logoText, "Weather Indicator");
 
     RemoteViews custom_notification_type_2 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_2);
-    custom_notification_type_2.setImageViewResource(R.id.image, R.drawable.logo);
+    // custom_notification_type_2.setImageViewResource(R.id.image, R.drawable.logo);
     custom_notification_type_2.setTextViewText(R.id.title, "இன்றைய சந்தை (பயிர்/காய்கறி) விலை உங்களுக்காக 🔥🔥🔥🔥");
 
     RemoteViews custom_notification_type_3 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_3);
