@@ -977,7 +977,7 @@ public class FlutterLocalNotificationsPlugin
               notificationChannelDetails.name,
               notificationChannelDetails.importance);
       notificationChannel.setDescription(notificationChannelDetails.description);
-      notificationChannel.setGroup(notificationChannelDetails.groupId);
+      // notificationChannel.setGroup(notificationChannelDetails.groupId);
       if (notificationChannelDetails.playSound) {
         AudioAttributes audioAttributes =
             new AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_NOTIFICATION).build();
