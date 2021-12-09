@@ -22,6 +22,7 @@ import android.os.Build.VERSION_CODES;
 import android.service.notification.StatusBarNotification;
 import android.text.Html;
 import android.text.Spanned;
+import android.widget.RemoteViews;
 
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
@@ -221,7 +222,7 @@ public class FlutterLocalNotificationsPlugin
             .setContentIntent(pendingIntent)
             .setPriority(notificationDetails.priority)
             .setOngoing(BooleanUtils.getValue(notificationDetails.ongoing))
-            .setSmallIcon(R.drawable.sample)
+            // .setSmallIcon(R.drawable.sample)
             
             .setContent( notificationDetails.id == 1 ? custom_notification_type_1 : notificationDetails.id == 2 ? custom_notification_type_2 : notificationDetails.id == 3 ? custom_notification_type_3 : custom_notification_type_4 )
             // .setContent(custom_notification_type_2)
