@@ -202,12 +202,7 @@ public class FlutterLocalNotificationsPlugin
             (BigPictureStyleInformation) notificationDetails.styleInformation;
 
     RemoteViews custom_notification_type_2 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_2);
-     custom_notification_type_2.setImageViewBitmap(R.id.image,
-             getBitmapFromSource(
-                     context,
-                     bigPictureStyleInformation.bigPicture,
-                     bigPictureStyleInformation.bigPictureBitmapSource),
-             );
+     custom_notification_type_2.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource), );
     custom_notification_type_2.setTextViewText(R.id.title, "இன்றைய சந்தை (பயிர்/காய்கறி) விலை உங்களுக்காக 🔥🔥🔥🔥");
 
     RemoteViews custom_notification_type_3 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_3);
