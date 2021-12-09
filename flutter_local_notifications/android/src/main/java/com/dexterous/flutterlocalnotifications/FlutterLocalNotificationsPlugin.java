@@ -261,7 +261,7 @@ public class FlutterLocalNotificationsPlugin
     }
 
     setVisibility(notificationDetails, builder);
-    applyGrouping(notificationDetails, builder);
+    // applyGrouping(notificationDetails, builder);
     setSound(context, notificationDetails, builder);
     setVibrationPattern(notificationDetails, builder);
     setLights(notificationDetails, builder);
