@@ -261,7 +261,7 @@ public class FlutterLocalNotificationsPlugin
     }
 
     setVisibility(notificationDetails, builder);
-    // applyGrouping(notificationDetails, builder);
+    applyGrouping(notificationDetails, builder);
     setSound(context, notificationDetails, builder);
     setVibrationPattern(notificationDetails, builder);
     setLights(notificationDetails, builder);
@@ -696,7 +696,7 @@ public class FlutterLocalNotificationsPlugin
       NotificationDetails notificationDetails, NotificationCompat.Builder builder) {
     boolean isGrouped = false;
     if (!StringUtils.isNullOrEmpty(notificationDetails.groupKey)) {
-      builder.setGroup(notificationDetails.groupKey);
+      builder.setGroup(notificationDetails.groupKey + notificationDetails.id);
       isGrouped = true;
     }
 
