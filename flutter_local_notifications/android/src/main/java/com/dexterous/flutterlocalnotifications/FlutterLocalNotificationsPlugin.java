@@ -187,7 +187,7 @@ public class FlutterLocalNotificationsPlugin
 
       if (notificationDetails.customNotificationType == 1) {
         RemoteViews custom_notification_type_1 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_1);
-        // custom_notification_type_1.setImageViewResource(R.id.image, R.drawable.sample);
+        custom_notification_type_1.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
         custom_notification_type_1.setImageViewResource(R.id.logo, R.drawable.logo);
         custom_notification_type_1.setTextViewText(R.id.title, notificationDetails.title);
         custom_notification_type_1.setTextViewText(R.id.button, "Apply loan");
@@ -199,6 +199,7 @@ public class FlutterLocalNotificationsPlugin
 
       if (notificationDetails.customNotificationType == 2) {
         RemoteViews custom_notification_type_2 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_2);
+        custom_notification_type_2.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
         custom_notification_type_2.setTextViewText(R.id.title, notificationDetails.title);
 
         return custom_notification_type_2;
@@ -206,7 +207,7 @@ public class FlutterLocalNotificationsPlugin
 
       if (notificationDetails.customNotificationType == 3) {
         RemoteViews custom_notification_type_3 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_3);
-        // custom_notification_type_3.setImageViewResource(R.id.image, R.drawable.sample);
+        custom_notification_type_3.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
         custom_notification_type_3.setTextViewText(R.id.title, notificationDetails.title);
         custom_notification_type_3.setTextViewText(R.id.button, "Apply loan");
         return custom_notification_type_3;
