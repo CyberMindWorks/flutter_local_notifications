@@ -718,7 +718,7 @@ public class FlutterLocalNotificationsPlugin
       NotificationDetails notificationDetails, NotificationCompat.Builder builder) {
     boolean isGrouped = true;
 
-    builder.setGroup(notificationDetails.id);
+    builder.setGroup(notificationDetails.id.toString());
 
     if (isGrouped) {
       if (BooleanUtils.getValue(notificationDetails.setAsGroupSummary)) {
