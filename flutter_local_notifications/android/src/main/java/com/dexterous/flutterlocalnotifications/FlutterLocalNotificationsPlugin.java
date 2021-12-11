@@ -181,6 +181,9 @@ public class FlutterLocalNotificationsPlugin
   private static RemoteViews getCustomNotification(
       Context context, NotificationDetails notificationDetails) {
 
+      BigPictureStyleInformation bigPictureStyleInformation =
+              (BigPictureStyleInformation) notificationDetails.styleInformation;
+
       if (notificationDetails.customNotificationType == 1) {
         RemoteViews custom_notification_type_1 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_1);
         custom_notification_type_1.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
@@ -198,9 +201,6 @@ public class FlutterLocalNotificationsPlugin
 
         return custom_notification_type_2;
       }
-
-      BigPictureStyleInformation bigPictureStyleInformation =
-              (BigPictureStyleInformation) notificationDetails.styleInformation;
 
       if (notificationDetails.customNotificationType == 3) {
         RemoteViews custom_notification_type_3 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_3);
