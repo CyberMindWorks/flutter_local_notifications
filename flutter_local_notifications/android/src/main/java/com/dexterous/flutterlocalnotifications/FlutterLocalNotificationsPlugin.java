@@ -716,11 +716,9 @@ public class FlutterLocalNotificationsPlugin
 
   private static void applyGrouping(
       NotificationDetails notificationDetails, NotificationCompat.Builder builder) {
-    boolean isGrouped = false;
-    if (!StringUtils.isNullOrEmpty(notificationDetails.groupKey)) {
-      builder.setGroup(notificationDetails.groupKey + notificationDetails.id);
-      isGrouped = true;
-    }
+    boolean isGrouped = true;
+
+    builder.setGroup(notificationDetails.id);
 
     if (isGrouped) {
       if (BooleanUtils.getValue(notificationDetails.setAsGroupSummary)) {
