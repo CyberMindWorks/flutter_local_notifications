@@ -248,8 +248,8 @@ public class FlutterLocalNotificationsPlugin
             .setOnlyAlertOnce(BooleanUtils.getValue(notificationDetails.onlyAlertOnce));
 
     if (notificationDetails.customNotificationType != null) {
-        builder.setCustomContentView(this.getCustomNotification(context, notificationDetails));
-        builder.setCustomBigContentView(this.getCustomNotification(context, notificationDetails));
+        builder.setCustomContentView(getCustomNotification(context, notificationDetails));
+        builder.setCustomBigContentView(getCustomNotification(context, notificationDetails));
     }
 
     setSmallIcon(context, notificationDetails, builder);
