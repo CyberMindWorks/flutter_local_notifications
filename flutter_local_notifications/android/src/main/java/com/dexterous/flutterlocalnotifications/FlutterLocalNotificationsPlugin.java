@@ -177,6 +177,50 @@ public class FlutterLocalNotificationsPlugin
     }
   }
 
+  // get custom notification from customnotificationtype
+  private static RemoteViews getCustomNotification(
+      Context context, NotificationDetails notificationDetails) {
+
+      BigPictureStyleInformation bigPictureStyleInformation =
+              (BigPictureStyleInformation) notificationDetails.styleInformation;
+
+
+      if (notificationDetails.customNotificationType == 1) {
+        RemoteViews custom_notification_type_1 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_1);
+        // custom_notification_type_1.setImageViewResource(R.id.image, R.drawable.sample);
+        // custom_notification_type_1.setImageViewResource(R.id.logo, R.drawable.logo);
+        custom_notification_type_1.setTextViewText(R.id.title, notificationDetails.title);
+        // custom_notification_type_1.setTextViewText(R.id.button, "Apply loan");
+        custom_notification_type_1.setTextViewText(R.id.logoTitle, "Farmyng Club");
+        custom_notification_type_1.setTextViewText(R.id.logoText, "Weather Indicator");
+
+        return custom_notification_type_1;
+      }
+
+      if (notificationDetails.customNotificationType == 2) {
+        RemoteViews custom_notification_type_2 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_2);
+        custom_notification_type_2.setTextViewText(R.id.title, notificationDetails.title);
+
+        return custom_notification_type_2;
+      }
+
+      if (notificationDetails.customNotificationType == 3) {
+        RemoteViews custom_notification_type_3 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_3);
+        // custom_notification_type_3.setImageViewResource(R.id.image, R.drawable.sample);
+        custom_notification_type_3.setTextViewText(R.id.title, notificationDetails.title);
+        // custom_notification_type_3.setTextViewText(R.id.button, "Apply loan");
+        return custom_notification_type_3;
+      }
+
+      if (notificationDetails.customNotificationType == 4) {
+        RemoteViews custom_notification_type_4 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_4);
+        custom_notification_type_4.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
+        return custom_notification_type_4;
+      }
+
+    return null;
+  }
+
   protected static Notification createNotification(Context context, NotificationDetails notificationDetails) {
     NotificationChannelDetails notificationChannelDetails = NotificationChannelDetails.fromNotificationDetails(notificationDetails);
     if(canCreateNotificationChannel(context, notificationChannelDetails)) {
@@ -190,32 +234,6 @@ public class FlutterLocalNotificationsPlugin
         flags |= PendingIntent.FLAG_IMMUTABLE;
     }
 
-    RemoteViews custom_notification_type_1 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_1);
-    // custom_notification_type_1.setImageViewResource(R.id.image, R.drawable.sample);
-    // custom_notification_type_1.setImageViewResource(R.id.logo, R.drawable.logo);
-    custom_notification_type_1.setTextViewText(R.id.title, "இன்றைய சந்தை (பயிர்/காய்கறி) விலை உங்களுக்காக 🔥🔥🔥🔥 இன்றைய சந்தை (பயிர்/காய்கறி) விலை உங்களுக்காக 🔥🔥🔥🔥 இன்றைய சந்தை (பயிர்/காய்கறி) விலை உங்களுக்காக 🔥🔥🔥🔥");
-    // custom_notification_type_1.setTextViewText(R.id.button, "Apply loan");
-    custom_notification_type_1.setTextViewText(R.id.logoTitle, "Farmyngclub");
-    custom_notification_type_1.setTextViewText(R.id.logoText, "Weather Indicator");
-
-    System.out.println(notificationDetails.customNotificationType);
-    System.out.println(notificationDetails.id);
-
-    BigPictureStyleInformation bigPictureStyleInformation =
-            (BigPictureStyleInformation) notificationDetails.styleInformation;
-
-    RemoteViews custom_notification_type_2 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_2);
-//     custom_notification_type_2.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
-    custom_notification_type_2.setTextViewText(R.id.title, "இன்றைய சந்தை (பயிர்/காய்கறி) விலை உங்களுக்காக 🔥🔥🔥🔥");
-
-    RemoteViews custom_notification_type_3 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_3);
-    // custom_notification_type_3.setImageViewResource(R.id.image, R.drawable.sample);
-    custom_notification_type_3.setTextViewText(R.id.title, "இன்றைய சந்தை (பயிர்/காய்கறி) விலை உங்களுக்காக 🔥🔥🔥🔥 இன்றைய சந்தை (பயிர்/காய்கறி) விலை உங்களுக்காக 🔥🔥🔥🔥 இன்றைய சந்தை (பயிர்/காய்கறி) விலை உங்களுக்காக 🔥🔥🔥🔥");
-    // custom_notification_type_3.setTextViewText(R.id.button, "Apply loan");
-
-    RemoteViews custom_notification_type_4 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_4);
-     custom_notification_type_4.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
-
     PendingIntent pendingIntent = PendingIntent.getActivity(context, notificationDetails.id, intent, flags);
     DefaultStyleInformation defaultStyleInformation = (DefaultStyleInformation) notificationDetails.styleInformation;
     NotificationCompat.Builder builder = new NotificationCompat.Builder(context, notificationDetails.channelId)
@@ -226,14 +244,13 @@ public class FlutterLocalNotificationsPlugin
             .setContentIntent(pendingIntent)
             .setPriority(notificationDetails.priority)
             .setOngoing(BooleanUtils.getValue(notificationDetails.ongoing))
-            // .setSmallIcon(R.drawable.sample)
             
-            .setCustomContentView(notificationDetails.customNotificationType == 1 ? custom_notification_type_1 : notificationDetails.customNotificationType == 2 ? custom_notification_type_2 : notificationDetails.customNotificationType == 3 ? custom_notification_type_3 : custom_notification_type_4 )
-            .setCustomBigContentView(notificationDetails.customNotificationType == 1 ? custom_notification_type_1 : notificationDetails.customNotificationType == 2 ? custom_notification_type_2 : notificationDetails.customNotificationType == 3 ? custom_notification_type_3 : custom_notification_type_4 )
-            // .setContent(custom_notification_type_2)
-            // .setContent(custom_notification_type_3)
-            // .setContent(custom_notification_type_4)
             .setOnlyAlertOnce(BooleanUtils.getValue(notificationDetails.onlyAlertOnce));
+
+    if (notificationDetails.customNotificationType != null) {
+        builder.setCustomContentView(this.getCustomNotification(context, notificationDetails));
+        builder.setCustomBigContentView(this.getCustomNotification(context, notificationDetails));
+    }
 
     setSmallIcon(context, notificationDetails, builder);
     builder.setLargeIcon(getBitmapFromSource(context, notificationDetails.largeIcon, notificationDetails.largeIconBitmapSource));
