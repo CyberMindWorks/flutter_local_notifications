@@ -265,7 +265,7 @@ public class NotificationDetails implements Serializable {
       notificationDetails.additionalFlags = (int[]) platformChannelSpecifics.get(ADDITIONAL_FLAGS);
       notificationDetails.subText = (String) platformChannelSpecifics.get(SUB_TEXT);
       notificationDetails.tag = (String) platformChannelSpecifics.get(TAG);
-      notificationDetails.customNotificationType = (String) platformChannelSpecifics.get(CUSTOM_NOTIFICATION_TYPE);
+      notificationDetails.customNotificationType = (Integer) platformChannelSpecifics.get(CUSTOM_NOTIFICATION_TYPE);
     }
   }
 
