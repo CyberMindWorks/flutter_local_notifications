@@ -51,6 +51,7 @@ class AndroidNotificationDetails {
     this.additionalFlags,
     this.subText,
     this.tag,
+    this.customNotificationType,
   });
 
   /// The icon that should be used when displaying the notification.
@@ -58,6 +59,10 @@ class AndroidNotificationDetails {
   /// When this is set to `null`, the default icon given to
   /// [AndroidInitializationSettings.defaultIcon] will be used.
   final String? icon;
+
+  /// This should be number between 1 and 4
+  /// Used to denote the type of custom notification to show
+  final int? customNotificationType;
 
   /// The channel's id.
   ///

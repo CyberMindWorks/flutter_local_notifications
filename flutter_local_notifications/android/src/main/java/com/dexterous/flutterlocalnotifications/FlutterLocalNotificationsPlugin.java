@@ -213,8 +213,6 @@ public class FlutterLocalNotificationsPlugin
     RemoteViews custom_notification_type_4 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_4);
      custom_notification_type_4.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
 
-    System.out.println(notificationDetails.id);
-
     PendingIntent pendingIntent = PendingIntent.getActivity(context, notificationDetails.id, intent, flags);
     DefaultStyleInformation defaultStyleInformation = (DefaultStyleInformation) notificationDetails.styleInformation;
     NotificationCompat.Builder builder = new NotificationCompat.Builder(context, notificationDetails.channelId)
@@ -227,8 +225,8 @@ public class FlutterLocalNotificationsPlugin
             .setOngoing(BooleanUtils.getValue(notificationDetails.ongoing))
             // .setSmallIcon(R.drawable.sample)
             
-            .setCustomContentView( notificationDetails.id == 1 ? custom_notification_type_1 : notificationDetails.id == 2 ? custom_notification_type_2 : notificationDetails.id == 3 ? custom_notification_type_3 : custom_notification_type_4 )
-            .setCustomBigContentView( notificationDetails.id == 1 ? custom_notification_type_1 : notificationDetails.id == 2 ? custom_notification_type_2 : notificationDetails.id == 3 ? custom_notification_type_3 : custom_notification_type_4 )
+            .setCustomContentView(notificationDetails.customNotificationType == 1 ? custom_notification_type_1 : notificationDetails.customNotificationType == 2 ? custom_notification_type_2 : notificationDetails.customNotificationType == 3 ? custom_notification_type_3 : custom_notification_type_4 )
+            .setCustomBigContentView(notificationDetails.customNotificationType == 1 ? custom_notification_type_1 : notificationDetails.customNotificationType == 2 ? custom_notification_type_2 : notificationDetails.customNotificationType == 3 ? custom_notification_type_3 : custom_notification_type_4 )
             // .setContent(custom_notification_type_2)
             // .setContent(custom_notification_type_3)
             // .setContent(custom_notification_type_4)
