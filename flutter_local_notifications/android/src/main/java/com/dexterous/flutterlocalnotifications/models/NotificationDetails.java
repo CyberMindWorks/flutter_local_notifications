@@ -118,6 +118,7 @@ public class NotificationDetails implements Serializable {
   private static final String FULL_SCREEN_INTENT = "fullScreenIntent";
   private static final String SHORTCUT_ID = "shortcutId";
   private static final String SUB_TEXT = "subText";
+  private static final String CUSTOM_NOTIFICATION_TYPE = "customNotificationType";
 
   public Integer id;
   public String title;
@@ -177,6 +178,7 @@ public class NotificationDetails implements Serializable {
   public String shortcutId;
   public String subText;
   public String tag;
+  public Integer customNotificationType;
 
   // Note: this is set on the Android to save details about the icon that should be used when
   // re-hydrating scheduled notifications when a device has been restarted.
@@ -190,6 +192,7 @@ public class NotificationDetails implements Serializable {
     notificationDetails.body = (String) arguments.get(BODY);
     notificationDetails.scheduledDateTime = (String) arguments.get(SCHEDULED_DATE_TIME);
     notificationDetails.timeZoneName = (String) arguments.get(TIME_ZONE_NAME);
+    notificationDetails.customNotificationType = (Integer) arguments.get(CUSTOM_NOTIFICATION_TYPE);
     if (arguments.containsKey(SCHEDULED_NOTIFICATION_REPEAT_FREQUENCY)) {
       notificationDetails.scheduledNotificationRepeatFrequency =
           ScheduledNotificationRepeatFrequency.values()[
@@ -262,6 +265,7 @@ public class NotificationDetails implements Serializable {
       notificationDetails.additionalFlags = (int[]) platformChannelSpecifics.get(ADDITIONAL_FLAGS);
       notificationDetails.subText = (String) platformChannelSpecifics.get(SUB_TEXT);
       notificationDetails.tag = (String) platformChannelSpecifics.get(TAG);
+      notificationDetails.customNotificationType = (String) platformChannelSpecifics.get(CUSTOM_NOTIFICATION_TYPE);
     }
   }
 

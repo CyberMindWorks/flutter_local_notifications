@@ -26,7 +26,6 @@ public class NotificationChannelDetails implements Serializable {
   private static final String LED_COLOR_RED = "ledColorRed";
   private static final String LED_COLOR_GREEN = "ledColorGreen";
   private static final String LED_COLOR_BLUE = "ledColorBlue";
-  private static final String CUSTOM_NOTIFICATION_TYPE = "customNotificationType";
 
   public String id;
   public String name;
@@ -42,7 +41,6 @@ public class NotificationChannelDetails implements Serializable {
   public NotificationChannelAction channelAction;
   public Boolean enableLights;
   public Integer ledColor;
-  public Integer customNotificationType;
 
   public static NotificationChannelDetails from(Map<String, Object> arguments) {
     NotificationChannelDetails notificationChannel = new NotificationChannelDetails();
@@ -56,7 +54,6 @@ public class NotificationChannelDetails implements Serializable {
         NotificationChannelAction.values()[(Integer) arguments.get(CHANNEL_ACTION)];
     notificationChannel.enableVibration = (Boolean) arguments.get(ENABLE_VIBRATION);
     notificationChannel.vibrationPattern = (long[]) arguments.get(VIBRATION_PATTERN);
-    notificationChannel.customNotificationType = (Integer) arguments.get(CUSTOM_NOTIFICATION_TYPE);
 
     notificationChannel.playSound = (Boolean) arguments.get(PLAY_SOUND);
     notificationChannel.sound = (String) arguments.get(SOUND);
@@ -97,7 +94,6 @@ public class NotificationChannelDetails implements Serializable {
     notificationChannel.soundSource = notificationDetails.soundSource;
     notificationChannel.ledColor = notificationDetails.ledColor;
     notificationChannel.enableLights = notificationDetails.enableLights;
-    notificationChannel.customNotificationType = notificationDetails.customNotificationType;
     return notificationChannel;
   }
 }
