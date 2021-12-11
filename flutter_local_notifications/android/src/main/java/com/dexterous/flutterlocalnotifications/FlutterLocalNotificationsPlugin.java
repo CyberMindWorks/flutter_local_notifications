@@ -198,6 +198,9 @@ public class FlutterLocalNotificationsPlugin
     custom_notification_type_1.setTextViewText(R.id.logoTitle, "Farmyngclub");
     custom_notification_type_1.setTextViewText(R.id.logoText, "Weather Indicator");
 
+    System.out.println(notificationDetails.customNotificationType);
+    System.out.println(notificationDetails.id);
+
     BigPictureStyleInformation bigPictureStyleInformation =
             (BigPictureStyleInformation) notificationDetails.styleInformation;
 
