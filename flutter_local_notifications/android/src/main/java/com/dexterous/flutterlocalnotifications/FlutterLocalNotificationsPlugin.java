@@ -188,9 +188,9 @@ public class FlutterLocalNotificationsPlugin
       if (notificationDetails.customNotificationType == 1) {
         RemoteViews custom_notification_type_1 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_1);
         // custom_notification_type_1.setImageViewResource(R.id.image, R.drawable.sample);
-        // custom_notification_type_1.setImageViewResource(R.id.logo, R.drawable.logo);
+        custom_notification_type_1.setImageViewResource(R.id.logo, R.drawable.logo);
         custom_notification_type_1.setTextViewText(R.id.title, notificationDetails.title);
-        // custom_notification_type_1.setTextViewText(R.id.button, "Apply loan");
+        custom_notification_type_1.setTextViewText(R.id.button, "Apply loan");
         custom_notification_type_1.setTextViewText(R.id.logoTitle, "Farmyng Club");
         custom_notification_type_1.setTextViewText(R.id.logoText, "Weather Indicator");
 
@@ -208,7 +208,7 @@ public class FlutterLocalNotificationsPlugin
         RemoteViews custom_notification_type_3 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_3);
         // custom_notification_type_3.setImageViewResource(R.id.image, R.drawable.sample);
         custom_notification_type_3.setTextViewText(R.id.title, notificationDetails.title);
-        // custom_notification_type_3.setTextViewText(R.id.button, "Apply loan");
+        custom_notification_type_3.setTextViewText(R.id.button, "Apply loan");
         return custom_notification_type_3;
       }
 
@@ -249,7 +249,6 @@ public class FlutterLocalNotificationsPlugin
 
     if (notificationDetails.customNotificationType != null) {
         builder.setCustomContentView(getCustomNotification(context, notificationDetails));
-        // builder.setCustomBigContentView(getCustomNotification(context, notificationDetails));
     }
 
     setSmallIcon(context, notificationDetails, builder);
