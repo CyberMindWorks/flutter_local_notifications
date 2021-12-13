@@ -221,6 +221,7 @@ public class FlutterLocalNotificationsPlugin
   }
 
   protected static Notification createNotification(Context context, NotificationDetails notificationDetails) {
+    System.out.println("create notification");
     NotificationChannelDetails notificationChannelDetails = NotificationChannelDetails.fromNotificationDetails(notificationDetails);
     if(canCreateNotificationChannel(context, notificationChannelDetails)) {
         setupNotificationChannel(context, notificationChannelDetails);
@@ -233,6 +234,7 @@ public class FlutterLocalNotificationsPlugin
         flags |= PendingIntent.FLAG_IMMUTABLE;
     }
 
+    System.out.println("pending intent");
     PendingIntent pendingIntent = PendingIntent.getActivity(context, notificationDetails.id, intent, flags);
     DefaultStyleInformation defaultStyleInformation = (DefaultStyleInformation) notificationDetails.styleInformation;
     NotificationCompat.Builder builder = new NotificationCompat.Builder(context, notificationDetails.channelId)
@@ -246,6 +248,7 @@ public class FlutterLocalNotificationsPlugin
             
             .setOnlyAlertOnce(BooleanUtils.getValue(notificationDetails.onlyAlertOnce));
 
+    System.out.println("builder");
     if (notificationDetails.customNotificationType != null) {
         System.out.println("custom notification type");
         builder.setCustomContentView(getCustomNotification(context, notificationDetails));
