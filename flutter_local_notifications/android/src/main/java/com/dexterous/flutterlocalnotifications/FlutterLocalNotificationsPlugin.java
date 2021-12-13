@@ -198,8 +198,6 @@ public class FlutterLocalNotificationsPlugin
       if (notificationDetails.customNotificationType == 2) {
         RemoteViews custom_notification_type_2 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_2);
         custom_notification_type_2.setTextViewText(R.id.title, notificationDetails.title);
-        custom_notification_type_2.setInt(R.id.layout, "setBackgroundResource", 0xdd33ffee);
-
         return custom_notification_type_2;
       }
 
