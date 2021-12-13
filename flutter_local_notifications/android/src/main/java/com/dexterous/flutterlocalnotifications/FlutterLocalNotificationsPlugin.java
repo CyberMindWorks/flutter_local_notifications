@@ -249,7 +249,7 @@ public class FlutterLocalNotificationsPlugin
         builder.setCustomBigContentView(getCustomNotification(context, notificationDetails));
     }
 
-    setSmallIcon(context, notificationDetails, builder);
+    // setSmallIcon(context, notificationDetails, builder);
     builder.setLargeIcon(getBitmapFromSource(context, notificationDetails.largeIcon, notificationDetails.largeIconBitmapSource));
     if (notificationDetails.color != null) {
         builder.setColor(notificationDetails.color.intValue());
