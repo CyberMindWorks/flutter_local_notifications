@@ -201,6 +201,24 @@ public class FlutterLocalNotificationsPlugin
         return custom_notification_type_2;
       }
 
+      if (notificationDetails.customNotificationType == 5) {
+        RemoteViews custom_notification_type_5 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_5);
+        custom_notification_type_5.setTextViewText(R.id.title, notificationDetails.title);
+        return custom_notification_type_5;
+      }
+
+      if (notificationDetails.customNotificationType == 6) {
+        RemoteViews custom_notification_type_6 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_6);
+        custom_notification_type_6.setTextViewText(R.id.title, notificationDetails.title);
+        return custom_notification_type_6;
+      }
+
+      if (notificationDetails.customNotificationType == 7) {
+        RemoteViews custom_notification_type_7 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_7);
+        custom_notification_type_7.setTextViewText(R.id.title, notificationDetails.title);
+        return custom_notification_type_7;
+      }
+
       if (notificationDetails.customNotificationType == 3) {
         RemoteViews custom_notification_type_3 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_3);
         custom_notification_type_3.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
@@ -208,6 +226,31 @@ public class FlutterLocalNotificationsPlugin
         custom_notification_type_3.setTextViewText(R.id.button, notificationDetails.customButtonText != null ? notificationDetails.customButtonText : "");
         return custom_notification_type_3;
       }
+
+      if (notificationDetails.customNotificationType == 8) {
+        RemoteViews custom_notification_type_8 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_8);
+        custom_notification_type_8.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
+        custom_notification_type_8.setTextViewText(R.id.title, notificationDetails.title);
+        custom_notification_type_8.setTextViewText(R.id.button, notificationDetails.customButtonText != null ? notificationDetails.customButtonText : "");
+        return custom_notification_type_8;
+      }
+
+      if (notificationDetails.customNotificationType == 9) {
+        RemoteViews custom_notification_type_9 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_9);
+        custom_notification_type_9.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
+        custom_notification_type_9.setTextViewText(R.id.title, notificationDetails.title);
+        custom_notification_type_9.setTextViewText(R.id.button, notificationDetails.customButtonText != null ? notificationDetails.customButtonText : "");
+        return custom_notification_type_9;
+      }
+
+      if (notificationDetails.customNotificationType == 10) {
+        RemoteViews custom_notification_type_10 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_10);
+        custom_notification_type_10.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
+        custom_notification_type_10.setTextViewText(R.id.title, notificationDetails.title);
+        custom_notification_type_10.setTextViewText(R.id.button, notificationDetails.customButtonText != null ? notificationDetails.customButtonText : "");
+        return custom_notification_type_10;
+      }
+
 
       if (notificationDetails.customNotificationType == 4) {
         RemoteViews custom_notification_type_4 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_4);
