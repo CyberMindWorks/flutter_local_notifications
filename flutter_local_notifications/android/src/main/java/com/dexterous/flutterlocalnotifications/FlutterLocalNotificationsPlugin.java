@@ -180,18 +180,16 @@ public class FlutterLocalNotificationsPlugin
   // get custom notification from customnotificationtype
   private static RemoteViews getCustomNotification(
       Context context, NotificationDetails notificationDetails) {
-        System.out.println("get custom");
 
       BigPictureStyleInformation bigPictureStyleInformation =
               (BigPictureStyleInformation) notificationDetails.styleInformation;
 
       if (notificationDetails.customNotificationType == 1) {
-        System.out.println(notificationDetails.customNotificationType);
         RemoteViews custom_notification_type_1 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_1);
         custom_notification_type_1.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
         custom_notification_type_1.setImageViewResource(R.id.logo, R.drawable.logo);
         custom_notification_type_1.setTextViewText(R.id.title, notificationDetails.title);
-        custom_notification_type_1.setTextViewText(R.id.logoTitle, "Farmyng Club");
+        custom_notification_type_1.setTextViewText(R.id.logoTitle, "ஃபார்மிங் கிளப்");
         custom_notification_type_1.setTextViewText(R.id.logoText, notificationDetails.customSummaryText != null ? notificationDetails.customSummaryText : "");
 
         return custom_notification_type_1;
@@ -221,7 +219,6 @@ public class FlutterLocalNotificationsPlugin
   }
 
   protected static Notification createNotification(Context context, NotificationDetails notificationDetails) {
-    System.out.println("create notification");
     NotificationChannelDetails notificationChannelDetails = NotificationChannelDetails.fromNotificationDetails(notificationDetails);
     if(canCreateNotificationChannel(context, notificationChannelDetails)) {
         setupNotificationChannel(context, notificationChannelDetails);
@@ -234,7 +231,6 @@ public class FlutterLocalNotificationsPlugin
         flags |= PendingIntent.FLAG_IMMUTABLE;
     }
 
-    System.out.println("pending intent");
     PendingIntent pendingIntent = PendingIntent.getActivity(context, notificationDetails.id, intent, flags);
     DefaultStyleInformation defaultStyleInformation = (DefaultStyleInformation) notificationDetails.styleInformation;
     NotificationCompat.Builder builder = new NotificationCompat.Builder(context, notificationDetails.channelId)
