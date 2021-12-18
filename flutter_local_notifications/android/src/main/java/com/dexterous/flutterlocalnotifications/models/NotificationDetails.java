@@ -120,6 +120,7 @@ public class NotificationDetails implements Serializable {
   private static final String SUB_TEXT = "subText";
   private static final String CUSTOM_NOTIFICATION_TYPE = "customNotificationType";
   private static final String CUSTOM_SUMMARY_TEXT = "customSummaryText";
+  private static final String CUSTOM_BUTTON_TEXT = "customButtonText";
 
   public Integer id;
   public String title;
@@ -181,6 +182,7 @@ public class NotificationDetails implements Serializable {
   public String tag;
   public Integer customNotificationType;
   public String customSummaryText;
+  public String customButtonText;
 
   // Note: this is set on the Android to save details about the icon that should be used when
   // re-hydrating scheduled notifications when a device has been restarted.
@@ -196,6 +198,7 @@ public class NotificationDetails implements Serializable {
     notificationDetails.timeZoneName = (String) arguments.get(TIME_ZONE_NAME);
     notificationDetails.customNotificationType = (Integer) arguments.get(CUSTOM_NOTIFICATION_TYPE);
     notificationDetails.customSummaryText = (String) arguments.get(CUSTOM_SUMMARY_TEXT);
+    notificationDetails.customButtonText = (String) arguments.get(CUSTOM_BUTTON_TEXT);
     if (arguments.containsKey(SCHEDULED_NOTIFICATION_REPEAT_FREQUENCY)) {
       notificationDetails.scheduledNotificationRepeatFrequency =
           ScheduledNotificationRepeatFrequency.values()[
@@ -270,6 +273,7 @@ public class NotificationDetails implements Serializable {
       notificationDetails.tag = (String) platformChannelSpecifics.get(TAG);
       notificationDetails.customNotificationType = (Integer) platformChannelSpecifics.get(CUSTOM_NOTIFICATION_TYPE);
       notificationDetails.customSummaryText = (String) platformChannelSpecifics.get(CUSTOM_SUMMARY_TEXT);
+      notificationDetails.customButtonText = (String) platformChannelSpecifics.get(CUSTOM_BUTTON_TEXT);
     }
   }
 

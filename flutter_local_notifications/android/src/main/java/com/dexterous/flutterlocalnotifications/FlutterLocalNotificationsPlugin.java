@@ -207,7 +207,7 @@ public class FlutterLocalNotificationsPlugin
         RemoteViews custom_notification_type_3 = new RemoteViews(context.getPackageName(), R.layout.custom_notification_3);
         custom_notification_type_3.setImageViewBitmap(R.id.image, getBitmapFromSource(context, bigPictureStyleInformation.bigPicture, bigPictureStyleInformation.bigPictureBitmapSource));
         custom_notification_type_3.setTextViewText(R.id.title, notificationDetails.title);
-        custom_notification_type_3.setTextViewText(R.id.button, "Apply loan");
+        custom_notification_type_3.setTextViewText(R.id.button, notificationDetails.customButtonText != null ? notificationDetails.customButtonText : "");
         return custom_notification_type_3;
       }
 
