@@ -192,7 +192,7 @@ public class FlutterLocalNotificationsPlugin
         custom_notification_type_1.setImageViewResource(R.id.logo, R.drawable.logo);
         custom_notification_type_1.setTextViewText(R.id.title, notificationDetails.title);
         custom_notification_type_1.setTextViewText(R.id.logoTitle, "Farmyng Club");
-        custom_notification_type_1.setTextViewText(R.id.logoText, notificationDetails.customSummaryText != null ? notificationDetails.summaryText : "");
+        custom_notification_type_1.setTextViewText(R.id.logoText, notificationDetails.customSummaryText != null ? notificationDetails.customSummaryText : "");
 
         return custom_notification_type_1;
       }
