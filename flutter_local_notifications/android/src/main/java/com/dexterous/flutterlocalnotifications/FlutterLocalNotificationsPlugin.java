@@ -192,7 +192,7 @@ public class FlutterLocalNotificationsPlugin
         custom_notification_type_1.setImageViewResource(R.id.logo, R.drawable.logo);
         custom_notification_type_1.setTextViewText(R.id.title, notificationDetails.title);
         custom_notification_type_1.setTextViewText(R.id.logoTitle, "Farmyng Club");
-        custom_notification_type_1.setTextViewText(R.id.logoText, "Weather Indicator");
+        custom_notification_type_1.setTextViewText(R.id.logoText, notificationDetails.customSummaryText != null ? notificationDetails.summaryText : "");
 
         return custom_notification_type_1;
       }
@@ -248,9 +248,7 @@ public class FlutterLocalNotificationsPlugin
             
             .setOnlyAlertOnce(BooleanUtils.getValue(notificationDetails.onlyAlertOnce));
 
-    System.out.println("builder");
     if (notificationDetails.customNotificationType != null) {
-        System.out.println("custom notification type");
         builder.setCustomContentView(getCustomNotification(context, notificationDetails));
         builder.setCustomBigContentView(getCustomNotification(context, notificationDetails));
     }

@@ -52,6 +52,7 @@ class AndroidNotificationDetails {
     this.subText,
     this.tag,
     this.customNotificationType,
+    this.customSummaryText,
   });
 
   /// The icon that should be used when displaying the notification.
@@ -63,6 +64,9 @@ class AndroidNotificationDetails {
   /// This should be number between 1 and 4
   /// Used to denote the type of custom notification to show
   final int? customNotificationType;
+
+  /// Used to denote the custom summary text
+  final String? customSummaryText;
 
   /// The channel's id.
   ///
